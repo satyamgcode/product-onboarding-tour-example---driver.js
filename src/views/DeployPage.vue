@@ -1,19 +1,3 @@
-<!-- <template>
-  <div class="min-h-screen bg-slate-950 text-white">
-    <router-view />
-  </div>
-</template>
-
-<script setup>
-// App wrapper for router-driven pages.
-</script>
-
-<style>
-body {
-  font-family: Inter, sans-serif;
-}
-</style> -->
-
 <script setup>
 import { onMounted } from "vue";
 import { driver } from "driver.js";
@@ -22,7 +6,7 @@ import "driver.js/dist/driver.css";
 const createTourContent = (title, description) => `
   <div class="tour-popup-wrapper">
     <div class="tour-robot">
-      <img class="w-[400px] h-[600px]" src="/aihr.png" alt="Robot Guide" />
+      <img src="/aihr.png" alt="Robot Guide" />
     </div>
 
     <div class="tour-message-box">
@@ -90,7 +74,6 @@ const startTour = () => {
           ),
           side: "top",
           align: "center",
-          popoverClass: "Third-section-popover",
         },
       },
     ],
@@ -174,23 +157,13 @@ onMounted(() => {
   </div>
 </template>
 
-<style>
-
-.Third-section-popover {
-  inset: 313.2031px auto auto 908.22px !important;
-}
+<style scoped>
 .custom-tour-popover {
   background: transparent !important;
   box-shadow: none !important;
   padding: 0 !important;
   border: none !important;
   min-width: 420px !important;
-}
-.driver-popover-arrow.driver-popover-arrow-side-left.driver-popover-arrow-align-start {
-  display: none !important;
-}
-.driver-popover-arrow.driver-popover-arrow-side-bottom.driver-popover-arrow-align-start {
-  display: none !important;
 }
 
 .driver-popover {
@@ -215,33 +188,15 @@ onMounted(() => {
 }
 
 .tour-robot {
-  /* width: 500px; */
-  /* height: 100px; */
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
 }
 
-.tour-popup-wrapper{
-  width: 650px !important;
-}
-.driver-popover-description{
-  width: 650px !important;
-}
-.driver-popover-close-btn{
-  display: none !important;
-}
-
-.driver-popover-close-btn{
-  color: #f3f4f6 !important;
-}
-
-.driver-popover-navigation-btns{
-  justify-content: center !important;
-}
-
 .tour-robot img {
-  width: 330px;
-  height: 500px;
-  /* object-fit: contain; */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .tour-message-box {
@@ -286,10 +241,4 @@ onMounted(() => {
   border: none !important;
   text-shadow: none !important;
 }
-
-.driver-popover-progress-text {
-  display: none !important;
-}
-
-
 </style>
